@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article>
   <div class="post-header container">
-    <div class="post-meta">{{ .Date.Format "2006-01-02" }}</div>
+    {{ if not .Date.IsZero }}<div class="post-meta">{{ .Date.Format "2006-01-02" }}</div>{{ end }}
     <h1>{{ .Title }}</h1>
     {{ with .Params.tags }}
     <div class="post-tags">
