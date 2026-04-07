@@ -1,0 +1,111 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <svg class="logo-grid" width="120" height="60" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0"  y="0" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="4.5" y="0" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="9"  y="0" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="13.5" y="0" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="19" y="0" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="23.5" y="0" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="28" y="0" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="32.5" y="0" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="0"  y="4.75" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="4.5" y="4.75" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="9"  y="4.75" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="13.5" y="4.75" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="19" y="4.75" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="23.5" y="4.75" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="28" y="4.75" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="32.5" y="4.75" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="0"  y="9.5" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="4.5" y="9.5" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="9"  y="9.5" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="13.5" y="9.5" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="19" y="9.5" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="23.5" y="9.5" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="28" y="9.5" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="32.5" y="9.5" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="0"  y="14.25" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="4.5" y="14.25" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="9"  y="14.25" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="13.5" y="14.25" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="19" y="14.25" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="23.5" y="14.25" width="3.5" height="3.5" rx="0.75" class="laghu"/>
+        <rect x="28" y="14.25" width="3.5" height="3.5" rx="0.75" class="guru"/>
+        <rect x="32.5" y="14.25" width="3.5" height="3.5" rx="0.75" class="guru"/>
+      </svg>
+    </div>
+    <h1>slokam</h1>
+    <p class="hero-tagline">{ a verse in code }</p>
+    <p class="hero-desc">
+      We are AI-native builders. We don't just consult — we bring products to every engagement,
+      and those products get better with every problem we solve. Old problems, new tools.
+    </p>
+    <p class="hero-status">We're still building. Verse by verse, until we're ready to launch.</p>
+    <a href="mailto:{{ .Site.Params.email }}" class="hero-cta">Start a conversation</a>
+  </div>
+</section>
+
+<!-- What We Do -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">What we do</div>
+    <h2>Product-led engineering, not body shops</h2>
+    <p>Every engagement ships with a product. Every product improves with each engagement. That's the flywheel.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-icon">{ }</span>
+        <h3>Cloud & Data Engineering</h3>
+        <p>Migrations, data warehouses, platform builds — on AWS, GCP, and Azure. We bring tooling that makes each migration faster than the last.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">></span>
+        <h3>Agentic Engineering</h3>
+        <p>AI agents that do real work. Not chatbots — autonomous systems that operate your data pipelines, monitor your infrastructure, and ship results.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">#</span>
+        <h3>Data Analytics</h3>
+        <p>From raw data to decisions. We build analytics platforms that let your team ask questions in plain language and get answers they trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy -->
+<section class="section" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-label">How we think</div>
+    <h2>A company of builders</h2>
+
+    <div class="philosophy-grid">
+      <div>
+        <p>A slokam is a verse — a complete unit of wisdom, self-contained and nothing wasted. That's how we build. Each solution is a verse in a larger poem. Each engineer we grow carries the tradition forward.</p>
+        <p>We don't dance to vendor tunes. We build our own products, find our own customers, and solve problems because they matter — not because a channel partner told us to.</p>
+      </div>
+      <div>
+        <blockquote class="philosophy-quote">
+          What I cannot create, I do not understand.
+          <cite>Richard Feynman</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-label">Get in touch</div>
+    <h2>Let's build something</h2>
+    <p>Whether you're migrating a data warehouse, building an AI agent, or looking for a team that builds like they mean it.</p>
+    <a href="mailto:{{ .Site.Params.email }}" class="contact-email">{{ .Site.Params.email }}</a>
+  </div>
+</section>
+
+{{ end }}

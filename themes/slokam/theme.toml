@@ -1,0 +1,10 @@
+name = "Slokam"
+license = "MIT"
+licenselink = "https://github.com/slokam-ai/slokam-theme/blob/main/LICENSE"
+description = "Custom theme for slokam.ai — Saffron & Ink, dark/light mode"
+tags = ["company", "blog", "dark", "light", "responsive"]
+min_version = "0.120.0"
+
+[author]
+  name = "Slokam"
+  homepage = "https://slokam.ai"

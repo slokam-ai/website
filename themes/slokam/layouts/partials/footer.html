@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      {{ partial "logo.html" . }}
+      <p class="footer-tagline">{{ .Site.Params.tagline }}</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+        {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+        {{ with .Site.Params.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ now.Year }} Slokam. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

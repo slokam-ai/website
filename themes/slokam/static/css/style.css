@@ -1,0 +1,649 @@
+/* ============================================
+   SLOKAM — Saffron & Ink Design System
+   A verse in code.
+   ============================================ */
+
+/* --- CSS Variables: Dark Theme (default) --- */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-card: #1a1a1a;
+  --bg-card-hover: #222222;
+  --border: #222222;
+  --border-light: #333333;
+
+  --text-primary: #e8e8e8;
+  --text-secondary: #999999;
+  --text-muted: #666666;
+  --text-dim: #444444;
+
+  --saffron: #C4841D;
+  --saffron-dim: #5a3a0a;
+  --saffron-glow: rgba(196, 132, 29, 0.15);
+  --saffron-hover: #d4941d;
+
+  --code-bg: #1a1a1a;
+  --code-border: #2a2a2a;
+
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* --- CSS Variables: Light Theme --- */
+[data-theme="light"] {
+  --bg-primary: #f8f6f2;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0ede8;
+  --border: #e0dbd3;
+  --border-light: #d4cfc7;
+
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --text-dim: #aaaaaa;
+
+  --saffron: #8B5E1A;
+  --saffron-dim: #E8D5B0;
+  --saffron-glow: rgba(139, 94, 26, 0.1);
+  --saffron-hover: #a06f20;
+
+  --code-bg: #f0ede8;
+  --code-border: #d4cfc7;
+
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--saffron);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--saffron-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--saffron);
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--text-secondary);
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+code {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.5rem;
+}
+
+/* --- Logo --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-grid .guru {
+  fill: var(--saffron);
+}
+
+.logo-grid .laghu {
+  fill: var(--saffron-dim);
+}
+
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--text-primary);
+  text-transform: lowercase;
+}
+
+/* --- Header / Nav --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-link:hover .logo-text {
+  color: var(--saffron);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+/* --- Theme Toggle --- */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+/* --- Hero Section --- */
+.hero {
+  padding: 10rem 0 6rem;
+  text-align: center;
+}
+
+.hero-grid {
+  margin-bottom: 2rem;
+}
+
+.hero-grid .logo-grid {
+  width: 120px;
+  height: 60px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  color: var(--saffron);
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.hero-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--saffron);
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero-cta:hover {
+  background: var(--saffron-hover);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* --- Pillars / What We Do --- */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.pillar {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.pillar:hover {
+  border-color: var(--saffron-dim);
+  background: var(--bg-card-hover);
+}
+
+.pillar h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.pillar p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.pillar-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: var(--saffron);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* --- Philosophy Section --- */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.philosophy-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  border-left: 3px solid var(--saffron);
+  padding-left: 1.5rem;
+}
+
+.philosophy-quote cite {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+/* --- Contact Section --- */
+.contact {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.contact-email {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  color: var(--saffron);
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--saffron);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.contact-email:hover {
+  background: var(--saffron-glow);
+}
+
+/* --- Footer --- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 0;
+}
+
+.footer-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-brand {
+  margin-bottom: 2rem;
+}
+
+.footer-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-col h4 {
+  margin-bottom: 0.25rem;
+}
+
+.footer-col a {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.footer-col a:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* --- Blog List --- */
+.blog-list {
+  margin-top: 2rem;
+}
+
+.blog-item {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.blog-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.blog-item-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.blog-item-title:hover {
+  color: var(--saffron);
+}
+
+.blog-item-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.blog-item-summary {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* --- Blog Single --- */
+.post-header {
+  padding: 8rem 0 2rem;
+  text-align: center;
+}
+
+.post-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.post-tags {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.post-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--saffron);
+  background: var(--saffron-glow);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.post-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 2rem 5rem;
+}
+
+.post-content h2 {
+  margin-top: 2.5rem;
+}
+
+.post-content h3 {
+  margin-top: 2rem;
+}
+
+.post-content ul, .post-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--saffron);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* --- About Page --- */
+.about-header {
+  padding: 8rem 0 2rem;
+}
+
+.about-content {
+  max-width: 720px;
+  padding-bottom: 5rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .nav-right {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 8rem 0 4rem;
+  }
+
+  .hero h1 {
+    font-size: 1.875rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+}
