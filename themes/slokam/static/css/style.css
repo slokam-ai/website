@@ -646,4 +646,8 @@ pre code {
   .container {
     padding: 0 1.25rem;
   }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.125rem; }
 }

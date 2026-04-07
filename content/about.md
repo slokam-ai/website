@@ -24,6 +24,6 @@ That's how we build. That's how we grow our team. That's what we believe enginee
 
 ## The team
 
-We're builders based in Bengaluru. We write Go and TypeScript. We think in systems. We believe the best way to learn a domain is to build something in it.
+We're builders based in Bengaluru. We write Python, Go, and TypeScript. We build on AWS, GCP, and Azure — databases, warehouses, lakes. We think in systems. We believe the best way to learn a domain is to build something in it.
 
 If you're an engineer who's bored with one product, one environment, and limited growth — if you feel like a spring waiting for the release — [we should talk](mailto:hello@slokam.ai).
